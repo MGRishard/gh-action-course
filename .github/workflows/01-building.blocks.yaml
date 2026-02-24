@@ -4,15 +4,15 @@ jobs:
   echo-hello:
     runs-on: ubuntu-latest
     steps:
-     -name: Say hello
-      run: echo "Hello World!"
+     - name: Say hello
+       run: echo "Hello World!"
   echo-goodbye:
     runs-on: ubuntu-latest
     steps:
-     -name: Success Step
-      run: |
-        echo "I will survive!"
-        exit 0
-     -name: Say Goodbye
-      run: "echo "GoodBye!"
+     - name: Success Step
+       run: |
+         echo "I will survive!"
+         exit 0
+     - name: Say Goodbye
+       run: "echo "GoodBye!"
   
