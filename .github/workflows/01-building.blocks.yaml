@@ -14,5 +14,5 @@ jobs:
          echo "I will survive!"
          exit 0
      - name: Say Goodbye
-       run: "echo "GoodBye!"
+       run: echo "GoodBye!"
   
