@@ -1,0 +1,18 @@
+name: 03-workflow-runners
+on: push
+jobs:
+  echo-ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+     - name: Ubuntu System
+       run: echo "This system is Running on $RUNNING_OS"
+  echo-mac:
+    runs-on: macos-latest
+    steps:
+     - name: Mac System
+       run: echo "This system is Running on $RUNNING_OS"
+  echo-windows:
+    runs-on: windows-latest
+    steps:
+     - name: Windows System
+       run: echo "This system is Running on $RUNNING_OS"
