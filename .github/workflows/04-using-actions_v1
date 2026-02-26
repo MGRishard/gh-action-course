@@ -1,0 +1,10 @@
+name: Using Actions
+on: push
+jobs:
+  builds:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkoutv6
+      - name: Print Folders
+        run: ls
