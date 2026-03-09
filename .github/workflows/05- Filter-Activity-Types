@@ -2,10 +2,10 @@ name: Filter Types
 on:
   pull_request:
     types:
-      -opened
-      -synchronize
+      - opened
+      - synchronize
     branches:
-      -main
+      - main
 jobs:
   echo:
     runs-on: ubuntu-latest
