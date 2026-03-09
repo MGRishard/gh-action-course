@@ -1,7 +1,7 @@
 name: Filter Types
 on:
   pull_request:
-    -open
+    -opened
     -synchronize
   branch:
     -main
