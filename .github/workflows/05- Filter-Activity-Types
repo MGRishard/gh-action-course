@@ -1,8 +1,9 @@
 name: Filter Types
 on:
   pull_request:
-    -opened
-    -synchronize
+    types:
+      -opened
+      -synchronize
   branches:
     -main
 jobs:
