@@ -1,6 +1,6 @@
 name: Filter Types
 on:
-  pull-request:
+  pull_request:
     -open
     -synchronize
   branch:
