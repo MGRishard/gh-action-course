@@ -1,0 +1,12 @@
+name: Filter Types
+on:
+  pull-request:
+    -open
+    -synchronize
+  branch:
+    -main
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+     - run: echo "This workflow will only run for pull requests"
