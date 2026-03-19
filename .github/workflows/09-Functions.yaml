@@ -1,0 +1,22 @@
+name: 09 - Functions
+on: 
+  workflow_dispatch:
+jobs:
+  echo1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Failing step
+        run: exit 1
+        run: echo "This step will not run because the previous step failed"
+      - name: Successful step
+        if: ${{success()}}
+        run: echo "This step will run because the previous step succeeded"
+      - name: I will execute
+        if: ${{failure()}}
+        run: echo "This step will run because the previous step failed"
+      - name: I will execute too
+        if: ${{!cancelled()}}
+        run: echo "I will always print because the workflow is not cancelled"
+      - name: I will execute when cancelled
+        if: ${{cancelled()}}
+        run: echo "I will never print because the workflow is not cancelled"
