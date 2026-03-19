@@ -1,0 +1,14 @@
+name: Variables
+env: GLOBAL_VAR: "This is a global variable"
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    env:
+      JOB_VAR: "This is a job variable"
+    steps:
+      env:
+        STEP_VAR: "This is a step variable"
+      run: |
+        echo "Global variable: $GLOBAL_VAR"
+        echo "Job variable: $JOB_VAR"
+        echo "Step variable: $STEP_VAR"
