@@ -1,17 +1,21 @@
 name: Variables
-on: 
+on:
   push:
   workflow_dispatch:
-env: GLOBAL_VAR: "This is a global variable"
+env:
+  GLOBAL_VAR: "This is a global variable"
 jobs:
   echo:
     runs-on: ubuntu-latest
     env:
       JOB_VAR: "This is a job variable"
     steps:
-      env:
-        STEP_VAR: "This is a step variable"
-      run: |
-        echo "Global variable: $GLOBAL_VAR"
-        echo "Job variable: $JOB_VAR"
-        echo "Step variable: $STEP_VAR"
+      - name: Echo variables
+        env:
+          STEP_VAR: "This is a step variable"
+          STEP_VAR2: "This is another step variable"
+        run: |
+          echo "Global variable: $GLOBAL_VAR"
+          echo "Job variable: $JOB_VAR"
+          echo "Step variable: $STEP_VAR"
+          echo "Step variable 2: $STEP_VAR2"
