@@ -4,18 +4,27 @@ on:
   workflow_dispatch:
 env:
   GLOBAL_VAR: "This is a global variable"
+  OVERWRITTEN: "This variable will be overwritten in Global scope"
 jobs:
   echo:
     runs-on: ubuntu-latest
     env:
       JOB_VAR: "This is a job variable"
+      OVERWRITTEN: "This variable will be overwritten in Job scope"
     steps:
       - name: Echo variables
         env:
           STEP_VAR: "This is a step variable"
           STEP_VAR2: "This is another step variable"
+          OVERWRITTEN: "This variable will be overwritten in Step scope"
         run: |
           echo "Global variable: ${{env.GLOBAL_VAR}}"
           echo "Job variable: ${{env.JOB_VAR}}"
           echo "Step variable: ${{env.STEP_VAR}}"
           echo "Step variable 2: ${{env.STEP_VAR2}}"
+          echo "OVERWRITTEN variable: ${{env.OVERWRITTEN}}"
+      - name: OVERWRITTEN
+        env:
+          OVERWRITTEN: "This variable will be overwritten in it's own step scope"
+          run: |
+            echo "OVERWRITTEN variable: ${{env.OVERWRITTEN}}"
