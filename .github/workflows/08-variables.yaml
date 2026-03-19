@@ -26,5 +26,5 @@ jobs:
       - name: OVERWRITTEN
         env:
           OVERWRITTEN: "This variable will be overwritten in it's own step scope"
-          run: |
-            echo "OVERWRITTEN variable: ${{env.OVERWRITTEN}}"
+        run: |
+          echo "OVERWRITTEN variable: ${{env.OVERWRITTEN}}"
