@@ -6,9 +6,10 @@ jobs:
   echo1:
     runs-on: ubuntu-latest
     steps:
+      - name: sleep for 10 seconds
+        run: sleep 10
       - name: Failing step
         run: exit 1
-        run: echo "This step will not run because the previous step failed"
       - name: Successful step
         if: ${{success()}}
         run: echo "This step will run because the previous step succeeded"
