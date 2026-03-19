@@ -1,5 +1,6 @@
 name: 09 - Functions
 on: 
+  push:
   workflow_dispatch:
 jobs:
   echo1:
