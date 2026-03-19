@@ -1,4 +1,7 @@
 name: Variables
+on: 
+  push:
+  workflow_dispatch:
 env: GLOBAL_VAR: "This is a global variable"
 jobs:
   echo:
